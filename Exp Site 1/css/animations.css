@@ -1,0 +1,15 @@
+/* animations.css — keyframes and glitch effects */
+
+/* simple text jitter/glitch keyframes for fallback or CSS-driven accents */
+@keyframes glitch-jitter {
+  0% { transform: translateX(0) skewX(0); }
+  20% { transform: translateX(-3px) skewX(-0.6deg); }
+  40% { transform: translateX(2px) skewX(0.4deg); }
+  60% { transform: translateX(-1px) skewX(-0.2deg); }
+  80% { transform: translateX(3px) skewX(0.8deg); }
+  100% { transform: translateX(0) skewX(0); }
+}
+
+.glitch-text-layer{display:inline-block;animation:glitch-jitter 2.2s infinite linear}
+
+/* canvas-based displacement will be implemented in js/canvas-gl.js; class left for fallback */

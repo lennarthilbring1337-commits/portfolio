@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Exp Site 1 — Lennart Hilbring</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <!-- Variable + display fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700;900&family=Playfair+Display:opsz,wght@12..72,400;600;700&family=Oswald:wght@300;700&display=swap" rel="stylesheet">
+  <!-- GSAP (for kinetic type & animations) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <aside class="sidebar" aria-label="Primary navigation">
+    <button class="sidebar-toggle" aria-expanded="false" aria-controls="nav">☰</button>
+    <nav id="nav" class="sidebar-nav" aria-hidden="true">
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#lab">Lab</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="lang-toggle">
+      <a href="#" aria-pressed="true">EN</a>
+      <span>/</span>
+      <a href="#">DE</a>
+    </div>
+  </aside>
+
+  <main id="main">
+    <section class="hero">
+      <!-- Layered type for crossfade / font experiments -->
+      <div class="hero-type-wrap">
+        <h1 class="hero-title hero-layer layer-a" aria-hidden="true">
+          <span class="kt-line">Lennart</span>
+          <span class="kt-line">Hilbring</span>
+          <span class="kt-line">Design as Active Evidence</span>
+        </h1>
+        <h1 class="hero-title hero-layer layer-b" aria-hidden="true">
+          <span class="kt-line">Lennart</span>
+          <span class="kt-line">Hilbring</span>
+          <span class="kt-line">Design as Active Evidence</span>
+        </h1>
+      </div>
+      <p class="hero-sub">This is not a portfolio. It is a manifesto — kinetic, brutal, and intentionally askew.</p>
+
+      <div class="hero-cta">
+        <button id="open-work" class="cta">Enter Work</button>
+        <button id="open-lab" class="cta ghost">Open Lab</button>
+      </div>
+
+      <div class="hero-canvas" id="hero-canvas" aria-hidden="true">
+        <!-- Three.js canvas will be injected here, plus a masonry fallback for small devices -->
+        <canvas id="hero-three-canvas" aria-hidden="true"></canvas>
+        <!-- Glitch text overlay canvas (drawn by canvas-gl.js) -->
+        <canvas id="glitch-text" aria-hidden="false" role="img" aria-label="Glitch headline overlay"></canvas>
+        <div id="hero-masonry" class="hero-masonry" aria-hidden="true">
+          <!-- fallback image tiles (progressive enhancement) -->
+          <img src="https://picsum.photos/seed/101/420/300" alt="project thumbnail"/>
+          <img src="https://picsum.photos/seed/102/360/540" alt="project thumbnail"/>
+          <img src="https://picsum.photos/seed/103/500/340" alt="project thumbnail"/>
+          <img src="https://picsum.photos/seed/104/380/480" alt="project thumbnail"/>
+          <img src="https://picsum.photos/seed/105/600/400" alt="project thumbnail"/>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="work-section">
+      <h2 class="section-title">Selected Work</h2>
+      <!-- Oversize grid: many tiles, intentionally oversized and overlapping -->
+      <div class="oversize-grid" id="oversize-grid">
+        <!-- JS will populate many tiles; provide a few seeds for progressive enhancement -->
+        <article class="tile tile-seed" data-w="6" data-h="3" tabindex="0"><h3>Type System — Exhibit</h3></article>
+        <article class="tile tile-seed" data-w="4" data-h="4" tabindex="0"><h3>Generative Poster</h3></article>
+        <article class="tile tile-seed" data-w="8" data-h="2" tabindex="0"><h3>Motion Identity</h3></article>
+      </div>
+    </section>
+
+    <section id="lab" class="lab-section">
+      <h2 class="section-title">Lab</h2>
+      <p class="muted">Interactive experiments: heavy libs are lazy-loaded on demand.</p>
+    </section>
+
+    <section id="about" class="about-section">
+      <h2 class="section-title">About</h2>
+      <p class="muted">I build type systems and prototypes that read like prints and behave like machines.</p>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <h2 class="section-title">Contact</h2>
+      <p class="muted">hello@example.com</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">© Lennart Hilbring — Exp Site 1</footer>
+
+  <script type="module" src="js/navigation.js" defer></script>
+  <script type="module" src="js/scroll-effects.js" defer></script>
+  <script type="module" src="js/canvas-gl.js" defer></script>
+</body>
+</html>
